@@ -9,7 +9,7 @@
         <title>Datos Carrera</title>
         <link href="css/Estilosparatabla.css" rel="stylesheet" type="text/css"/>
         <%!
-            // Variables globales (Página)
+            
             String consulta;
             Connection cn;
             PreparedStatement pst;
@@ -36,7 +36,7 @@
                                 + " from carrera  "
                                 + " where  "
                                 + " idcarrera =  " + s_idcarrera;
-                    //out.print(consulta);
+                   
                     pst = cn.prepareStatement(consulta);
                     rs = pst.executeQuery();
                     if (rs.next()) {
@@ -58,12 +58,12 @@
                             </tr>
                             <tr>
                                 <td>Código: </td>
-                                <td><input type="text" name="f_codigo" value="<% out.print(rs.getString(4)); %>" maxlength="12" size="15" /></td>
+                                <td><input type="text" name="f_codigo" value="<% out.print(rs.getString(2)); %>" maxlength="12" size="15" /></td>
                             </tr>
                             <tr>
                                 <td>Estado: </td>
                           <td>
-                          <select  name="f_estado" value="<% out.print(rs.getString(5)); %>">
+                          <select  name="f_estado" value="<% out.print(rs.getString(3)); %>">
                             <option value="A">A</option>
                             <option value="I">I</option>
                           </select>
@@ -86,8 +86,7 @@
                     <%
                         }
                 }else{
-                // Si no se hace la primera parte del modidicar debe mostrar el 
-                // formulario de agregar estudiante
+               
 
         %>
         <form name="AgregarCarreraForm" action="datoscarrera.jsp" method="GET">
@@ -161,16 +160,15 @@
                 
                 if (s_accion !=null) {
                     
-                    // Ejecutar la eliminación de estudiantes
+                   
                     if (s_accion.equals("E")) {
                             consulta =    " delete from carrera "
                                         + " where  "
                                         + " idcarrera = " + s_idcarrera +"; ";
-                            //out.print(consulta);
+                            
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
-                    // Sino se elimina registros de estudiantes, 
-                    // Pregunta si se va a REGISTRAR UN NUEVO ESTUDIANTE
+                  
                     }else if(s_accion.equals("C")){
                             s_nombre = request.getParameter("f_nombre");
                             s_codigo = request.getParameter("f_codigo");
@@ -179,11 +177,10 @@
                             consulta =    " insert into "
                                         + " carrera (nombre, codigo, estado)"
                                         + " values('"+ s_nombre +"','"+ s_codigo +"','"+s_estado+"');  ";
-                            //out.print(consulta);
+                           
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
-                    // Si no se está creando o eliminando registro de estudiante
-                    // Pregunta si va a hacer la MODIFICACIÓN DE ESTUDIANTES - Parte 2
+                   
                     }else if (s_accion.equals("M2")) {
                             s_nombre = request.getParameter("f_nombre");
                             s_codigo = request.getParameter("f_codigo");
@@ -195,17 +192,17 @@
                                         + " estado = '" + s_estado + "'  "
                                         + " where  "
                                         + " idcarrera = " + s_idcarrera + "; ";
-                            //out.print(consulta);
+                          
                             pst = cn.prepareStatement(consulta);
                             pst.executeUpdate();
                     }
                     
                 }
                 
-                // Listar los estudiantes de la TABLA ESTUDIANTE
+              
                 consulta= " Select idcarrera, nombre, codigo, estado "
                         + " from carrera ";
-                //out.print(consulta);
+                
                 pst = cn.prepareStatement(consulta);
                 rs = pst.executeQuery();
                 int num = 0;
@@ -226,7 +223,7 @@
                     </tr>                    
                     <%
                     }
-                    // Se cierra todas las conexiones
+                   
                     rs.close();
                     pst.close();
                     cn.close();

@@ -9,7 +9,7 @@
         <title>Datos Curso</title>
         <link href="css/Estilosparatabla.css" rel="stylesheet" type="text/css"/>
         <%!
-            // Variables globales (Página)
+            
             String consulta;
             Connection cn;
             PreparedStatement pst;
@@ -32,13 +32,13 @@
                 cn = bd.getConnection();
                 s_accion = request.getParameter("f_accion");
                 s_idcurso = request.getParameter("f_idcurso");
-                // Primera parte del modificar
+                
                 if (s_accion!=null && s_accion.equals("M1")) {
                     consulta =  "   select codigo, nombre, horas, creditos, estado  "
                                 + " from curso  "
                                 + " where  "
                                 + " idcurso =  " + s_idcurso;
-                    //out.print(consulta);
+                    
                     pst = cn.prepareStatement(consulta);
                     rs = pst.executeQuery();
                     if (rs.next()) {
