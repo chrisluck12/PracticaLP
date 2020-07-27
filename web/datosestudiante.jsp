@@ -72,7 +72,12 @@
                             </tr>
                             <tr>
                                 <td>Estado: </td>
-                                <td><input type="text" name="f_estado" value="<% out.print(rs.getString(5)); %>" maxlength="1" size="2" /></td>
+                          <td>
+                          <select  name="f_estado" value="<% out.print(rs.getString(5)); %>">
+                            <option value="A">A</option>
+                            <option value="I">I</option>
+                          </select>
+                        <td/>      
                             </tr>
                             <tr align="center">
                                 <td colspan="2">
@@ -84,7 +89,9 @@
                         </tbody>
                     </table>
                 </form>
-                 
+                                  
+                          
+                
                     
                     <%
                         }
@@ -125,23 +132,30 @@
                             <option value="A">A</option>
                             <option value="I">I</option>
                           </select>
-                        <td/> 
+                         </td>
                     </tr>
                     <tr align="center">
                         <td colspan="2">
                             <input type="submit" value="Agregar" name="f_agregar" />
                             <input type="hidden" name="f_accion" value="C" />
-                            
-                        
                         </td>
                     </tr>
-                </tbody>
+                </tbody>    
             </table>
         </form>
         <%
             }
         %>
-        
+        <table border="0" align="center" class="ecologico" style="margin: auto; display: table">
+                     <thead>
+                    <tr>
+                        <th colspan="2">Volver al Menu</th>
+                    </tr>
+                </thead>
+            <tr align ="center">
+                           <td colspan="2"><a href="menu.jsp"><input type=image src="img/backtomenu.png" width="40" height="30"/></a></td>
+                    </tr>
+        </table><br>
         <table border="1" cellpadding ="2" align = "center" class="ecologico" style="margin: auto; display: table" >
             <thead>
                 <tr>
@@ -233,7 +247,7 @@
                         <td><%out.print(rs.getString(4));%></td>
                         <td><%out.print(rs.getString(5));%></td>
                         <td><%out.print(rs.getString(6));%></td>
-                        <td><a type=image src="img/delete.png" href="datosestudiante.jsp?f_accion=E&f_idestudiante=<%out.print(ide);%>"><input type=image src="img/delete.png" width="40" height="30"></a></td>
+                        <td><a href="datosestudiante.jsp?f_accion=E&f_idestudiante=<%out.print(ide);%>"><input type=image src="img/delete.png" width="40" height="30"></a></td>
                         <td><a href="datosestudiante.jsp?f_accion=M1&f_idestudiante=<%out.print(ide);%>"><input type=image src="img/edit.png" width="40" height="30"></a></td>
                         
                     </tr>                    

@@ -15,7 +15,7 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(img/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						LOGIN UNTELS
+						Sign In
 					</span>
 				</div>
 
