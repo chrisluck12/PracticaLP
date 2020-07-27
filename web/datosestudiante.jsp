@@ -1,4 +1,4 @@
-50<%@page import="java.sql.*" %>
+<%@page import="java.sql.*" %>
 <%@page import="bd.*" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
