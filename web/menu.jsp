@@ -14,7 +14,7 @@
     </head>
     <body>
         <form name="f_datos" action="valida.jsp" method="POST">
-            <table border="1" align="center" cellspacing="0" celpagging="0" >
+            <table border="0" align="center" class="ecologico" style="margin: auto; display: table" >
                 <thead>
                     <tr>
                         <th colspan="2">PRÁCTICA</th>
@@ -37,12 +37,20 @@
                         <td>Datos Matricula</td>
                         <td><a href="datosmatricula.jsp">Ingresar</a></td>
                     </tr>
-                    <tr align ="center">
-                        <td colspan="2"><a href="login.jsp">Volver</a></td>
-                    </tr>
+                   
                 </tbody>
             </table>
 
-        </form> 
+        </form><br><br>
+         <table border="0" align="center" class="ecologico" style="margin: auto; display: table">
+                     <thead>
+                    <tr>
+                         <th colspan="2">Volver al Login</th>
+                    </tr>
+                </thead>
+          <tr align ="center">
+                        <td colspan="2"><a href="login.jsp"><input type=image src="img/back.png" width="40" height="30"/></a></td>
+                    </tr>
+        </table><br>
     </body>
 </html>

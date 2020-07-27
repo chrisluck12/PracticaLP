@@ -44,7 +44,7 @@ table.ecologico td, table.ecologico th {
 table.ecologico thead td, table.ecologico thead th,
 table.ecologico tfoot td, table.ecologico tfoot th{
     font-weight: bold;
-    background-color: #70AD47;
+    background-color: #47ad9f;
     color: #FFFFFF;
 }
 table.ecologico tr:nth-of-type(odd) {
